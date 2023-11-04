@@ -21,7 +21,6 @@ def login_rest_post():
     rest_name = request.form["name"]
     rest_cuisines = request.form["cuisines"]
     rest_seats = request.form["seats"]
-    print(rest_name, rest_cuisines, rest_seats)
     restaurant = pd.DataFrame({"Name": [rest_name], "Cuisine": [rest_cuisines], "Seats": [rest_seats]})
     rests_df = pd.concat([rests_df, restaurant], ignore_index=True)
     rests_df.to_csv("./csv/rests.csv")
